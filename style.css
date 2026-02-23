@@ -1,88 +1,170 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background: #eaf6ff;
+  color: #083047;
+}
 
-<body>
-  <header class="top">
-    <h1>Океанариум “BlueWave”</h1>
-    <h1 class="sub">Афиша шоу и правила посещения</h1>
-  </header>
+/* Шапка */
+.top {
+  padding: 16px 14px;
+  background: #0b5fa8;
+  color: #ffffff;
+}
 
-  <nav class="menu">
-    <a class="nav-link" href="#shows">Шоу</a>
-    <a class="nav-link" href="#rules">Правила</a>
-    <a class="nav-link" href="https://ru.wikipedia.org/wiki/Океанариум" target="_blank" rel="noopener">
-      Что такое океанариум?
-    </a>
-  </nav>
+.top h1 { margin: 0 0 6px; }
+.sub { margin: 0; opacity: 0.9; }
 
-  <main class="content">
-    <section class="block" id="shows">
-      <h2>Шоу сегодня</h2>
+/* Меню */
+.menu {
+  padding: 10px 14px;
+  background: #ffffff;
+  border-bottom: 2px solid #b7dcff;
+}
 
-      <article class="show">
-        <h3>11:00 — Кормление акул</h3>
-        <p>Дайверы кормят акул и рассказывают о безопасности.</p>
-      </article>
+.nav-link {
+  display: inline-block;
+  margin-right: 10px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #083047;
+  border: 1px solid #b7dcff;
+}
 
-      <article class="show">
-        <h3>13:00 — Морские котики</h3>
-        <p>Весёлые трюки и короткое выступление.</p>
-      </article>
+/* :hover */
+.nav-link:hover {
+  background: #99d9ff;
+}
 
-      <article class="show">
-        <h3>15:00 — Подводная экскурсия</h3>
-        <p>Экскурсовод объясняет, кто живёт в большом туннеле.</p>
-      </article>
+/* :visited */
+.nav-link:visited {
+  color: #6a3dcc;
+  background: #dedede;
+}
 
-      <article class="show">
-        <h3>17:00 — Секреты кораллов</h3>
-        <p>Почему кораллы важны и как они растут.</p>
-      </article>
-    </section>
+/* Контент */
+.content {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 14px;
+}
 
-    <section class="block" id="rules">
-      <h2>Правила посещения</h2>
+.block {
+  background: #ffffff;
+  border: 1px solid #b7dcff;
+  border-radius: 14px;
+  padding: 14px;
+  margin: 14px 0;
+}
 
-      <article class="rule">
-        <h3>Береги животных</h3>
-        <p>Не стучи по стеклу и не корми рыб без разрешения сотрудников.</p>
-      </article>
+.block h2 { margin: 0 0 10px; }
 
-      <a class="btn" href="#shows">Вернуться к афише</a>
-    </section>
-  
-  
-  <section class="block tickets">
-  <h2>Билеты</h2>
+/* Карточки шоу */
+.show {
+  border: 1px solid #d7ecff;
+  border-radius: 12px;
+  padding: 12px;
+  margin: 10px 0;
+  background: #f6fbff;
+}
 
-  <article class="ticket">
-    <h3>Детский</h3>
-    <p>Для школьников до 14 лет.</p>
-    <a class="ticket-btn" href="#">Купить</a>
-  </article>
+/* :nth-child(3) — это ВТОРАЯ карточка show (потому что 1-й ребёнок h2) */
+.block article:nth-child(3) {
+  background: #fff6c9;
+  border: 1px dashed #e2c24f;
+}
 
-  <article class="ticket">
-    <h3>Взрослый</h3>
-    <p>Стандартный входной билет.</p>
-    <a class="ticket-btn" href="#">Купить</a>
-  </article>
-</section>
-    
-    <section class="tips">
-  <h2>Подсказки посетителю</h2>
+/* :last-child — последняя карточка в секции */
+.block article:last-child {
+  font-style: italic;
+  border-color: #0b5fa8;
+}
 
-  <article class="tip-card">
-    <h3>Приходи пораньше</h3>
-    <p>Так меньше очередь и можно спокойно всё посмотреть.</p>
-  </article>
 
-  <article class="tip-card">
-    <h3>Планируй маршрут</h3>
-    <p>Сначала шоу, затем выставка, потом сувениры.</p>
-  </article>
-</section>
-    
-    </main>
-  <footer class="footer">
-    <p>Время работы: 10:00–20:00 • Набережная 5</p>
-  </footer>
+/* Чтобы first-child был понятным и точно работал:
+   первый элемент на странице — header.top, а в нём первым ребёнком h1 */
+.top h1:first-child {
+  text-decoration: underline;
+}
 
-</body>
+/* Правила */
+.rule {
+  border: 1px solid #d7ecff;
+  border-radius: 12px;
+  padding: 12px;
+  background: #f6fbff;
+  margin: 10px 0 0;
+}
+
+/* Кнопка */
+.btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  text-decoration: none;
+  background: #2bb3ff;
+  color: #083047;
+  border: 1px solid #0b5fa8;
+}
+
+/* :active */
+.btn:active {
+  background: #ff4d6d;
+  color: #ffffff;
+}
+
+/* Подвал */
+.footer {
+  text-align: center;
+  padding: 12px 14px;
+  background: #ffffff;
+  border-top: 2px solid #b7dcff;
+  color: #355a70;
+}
+
+.ticket {
+  background: #f6fbff;
+  border: 1px solid #d7ecff;
+  border-radius: 12px;
+  padding: 12px;
+  margin: 10px 0;
+}
+
+.ticket-btn {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  text-decoration: none;
+  background: #2bb3ff;
+  color: #083047;
+  border: 1px solid #0b5fa8;
+}
+
+/* :hover */
+.ticket-btn:hover {
+  background: #d7f0ff;
+}
+
+/* :active */
+.ticket-btn:active {
+  background: #ff4d6d;
+  color: #fff;
+}
+
+.tip-card {
+  background: #ffffff;
+  border: 1px solid #b7dcff;
+  border-radius: 12px;
+  padding: 12px;
+  margin: 10px 0;
+}
+
+/* :hover */
+.tip-card:hover {
+  background: #fff6c9;
+  border-color: #e2c24f;
+}
